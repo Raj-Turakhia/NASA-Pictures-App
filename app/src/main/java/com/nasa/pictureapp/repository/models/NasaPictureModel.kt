@@ -2,6 +2,7 @@ package com.nasa.pictureapp.repository.models
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class NasaPictureModel(
     @SerializedName("copyright")
@@ -20,4 +21,4 @@ data class NasaPictureModel(
     val title: String? = null,
     @SerializedName("url")
     val url: String? = null
-)
+) : Serializable

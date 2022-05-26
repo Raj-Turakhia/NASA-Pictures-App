@@ -8,6 +8,20 @@
     <fragment
         android:name="com.nasa.pictureapp.ui.home.HomeFragment"
         android:id="@+id/navigation_home"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/navigation_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.nasa.pictureapp.ui.detail.PictureDetailFragment"
+        tools:layout="@layout/fragment_picture_detail_layout">
+        <argument
+            android:name="position"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>
