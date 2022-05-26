@@ -28,6 +28,7 @@
                     path="@{model.url}"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:contentDescription="@string/app_name"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
