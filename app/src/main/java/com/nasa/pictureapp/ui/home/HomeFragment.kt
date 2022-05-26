@@ -5,13 +5,18 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import com.nasa.pictureapp.R
+import com.nasa.pictureapp.BR
 import com.nasa.pictureapp.databinding.FragmentHomeBinding
+import com.nasa.pictureapp.databinding.RowItemsBinding
 import com.nasa.pictureapp.di.AppComponentProvider
 import com.nasa.pictureapp.di.base.BaseFragment
 import com.nasa.pictureapp.di.base.toolbar.FragmentToolbar
+import com.nasa.pictureapp.repository.models.NasaPictureModel
 import com.nasa.pictureapp.util.extension.e
 import com.nasa.pictureapp.util.extension.toast
+import com.nasa.pictureapp.util.liveadapter.LiveAdapter
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
@@ -28,6 +33,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val gridLayout = GridLayoutManager(context, 2)
+        binding.rvItems.layoutManager = gridLayout
         setUpWithViewModel(viewModel)
         registerObservers()
     }
@@ -42,5 +49,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     }
 
     private fun registerObservers() {
+        viewModel.apply {
+            itemResponse.observe(viewLifecycleOwner, {
+                it?.let {
+                    LiveAdapter(it, BR.model)
+                        .map<NasaPictureModel, RowItemsBinding>(R.layout.row_items)
+                        .into(binding.rvItems)
+                }
+
+            })
+        }
     }
 }
