@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.dashboard.DashboardActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.NasaPictureApp.NoActionBar"/>
     </application>
 

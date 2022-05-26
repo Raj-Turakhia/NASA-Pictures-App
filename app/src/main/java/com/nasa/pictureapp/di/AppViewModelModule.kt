@@ -2,6 +2,7 @@ package com.nasa.pictureapp.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.nasa.pictureapp.ui.detail.DetailViewModel
 import com.nasa.pictureapp.ui.home.HomeViewModel
 import dagger.Binds
 import dagger.Module
@@ -18,4 +19,9 @@ abstract class AppViewModelModule {
     @IntoMap
     @ViewModelMapKey(HomeViewModel::class)
     abstract fun bindHomeViewModel(viewModel: HomeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelMapKey(DetailViewModel::class)
+    abstract fun bindDetailViewModel(viewModel: DetailViewModel): ViewModel
 }
