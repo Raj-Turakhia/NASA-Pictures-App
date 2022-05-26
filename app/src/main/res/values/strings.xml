@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Nasa Picture</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="title_home">Nasa</string>
+    <string name="iconOpenNavigationDrawer">iconOpenNavigationDrawer</string>
+    <string name="iconBack">iconBack</string>
+    <string name="oops_text">Oops!</string>
+    <string name="no_network">No Network</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="ok">OK</string>
+    <string name="error">Error</string>
+    <string name="something_went_wrong">Something went wrong Please try again.</string>
+</resources>

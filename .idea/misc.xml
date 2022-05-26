@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_back_white.xml" value="0.213" />
+        <entry key="app/src/main/res/drawable/ic_image_gery_24dp.xml" value="0.213" />
+        <entry key="app/src/main/res/drawable/ic_person_grey_24dp.xml" value="0.213" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
